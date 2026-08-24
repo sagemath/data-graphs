@@ -9,7 +9,7 @@ description = "Graph database resources for SageMath and other Python applicatio
 readme = "README.md"
 requires-python = ">=3.9"
 license = "GPL-2.0-or-later"
-license-files = ["LICENSE"]
+license-files = ["LICENSE", "DATA_LICENSES.md"]
 authors = [
   {name = "The Sage Developers"},
 ]
@@ -46,4 +46,3 @@ where = ["src"]
 [tool.pytest.ini_options]
 addopts = "-ra"
 testpaths = ["tests"]
-

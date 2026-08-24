@@ -54,6 +54,16 @@ Only known top-level resource names are accepted.  The package never modifies
 its installed resources; applications that download updates should store them
 in a separate user-writable location.
 
+## Releases
+
+Publishing a GitHub Release runs the repository's `Release` GitHub Actions
+workflow.  The workflow builds and checks the wheel and source distribution,
+attaches both files to the GitHub Release, and publishes them to PyPI through
+Trusted Publishing.  Configure a PyPI Trusted Publisher for this repository,
+the `release.yml` workflow, and the `pypi` environment before publishing the
+first release.  Do not publish a release until the data-license blocker below
+has been resolved.
+
 ## Data provenance and licensing
 
 The Python source and packaging files are provided under GPL-2.0-or-later.
@@ -62,4 +72,3 @@ source-specific terms.  Sage's existing `COPYING.txt` labels `graphs` as
 `None (database)`, so the precise redistribution terms must be confirmed with
 the data owners before a public PyPI release.  See [DATA_LICENSES.md](DATA_LICENSES.md)
 for the provenance currently recorded by Sage.
-
