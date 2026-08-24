@@ -1,0 +1,6 @@
+include DATA_LICENSES.md
+include LICENSE
+include README.md
+recursive-include src/sage_data_graphs/data *.db *.json *.txt *.xml
+recursive-include tests *.py
+

@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install . pytest
+      - run: python -m pytest
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade build pip
+      - run: python -m build
+      - run: python -m venv .venv-wheel
+      - run: .venv-wheel/bin/python -m pip install --no-deps dist/*.whl
+      - run: >-
+          .venv-wheel/bin/python -c
+          "from sage_data_graphs import graph_database_connection;
+          c = graph_database_connection(); db = c.__enter__();
+          assert db.execute('PRAGMA integrity_check').fetchone() == ('ok',);
+          c.__exit__(None, None, None)"

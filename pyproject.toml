@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sage-data-graphs"
+version = "20210214.0"
+description = "Graph database resources for SageMath and other Python applications"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "GPL-2.0-or-later"
+license-files = ["LICENSE"]
+authors = [
+  {name = "The Sage Developers"},
+]
+keywords = ["graphs", "database", "mathematics", "sagemath"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.urls]
+Homepage = "https://github.com/cxzhong/sage-data-graphs"
+Repository = "https://github.com/cxzhong/sage-data-graphs"
+Issues = "https://github.com/cxzhong/sage-data-graphs/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"sage_data_graphs.data" = ["*.db", "*.json", "*.xml", "*.txt"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
