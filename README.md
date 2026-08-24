@@ -58,11 +58,12 @@ in a separate user-writable location.
 
 Publishing a GitHub Release runs the repository's `Release` GitHub Actions
 workflow.  The workflow builds and checks the wheel and source distribution,
-attaches both files to the GitHub Release, and publishes them to PyPI through
-Trusted Publishing.  Configure a PyPI Trusted Publisher for this repository,
-the `release.yml` workflow, and the `pypi` environment before publishing the
-first release.  Do not publish a release until the data-license blocker below
-has been resolved.
+smoke-tests the wheel in a clean environment, attaches both files to the
+GitHub Release, and publishes them to PyPI through Trusted Publishing.  The
+Release tag must be `20210214.0` or `v20210214.0`.  Configure a PyPI Trusted
+Publisher for this repository, the `release.yml` workflow, and the `pypi`
+environment before publishing the first release.  Do not publish a release
+until the data-license blocker below has been resolved.
 
 ## Data provenance and licensing
 
