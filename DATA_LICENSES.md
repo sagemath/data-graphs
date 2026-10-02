@@ -7,10 +7,9 @@ file is covered by the GPL license in this repository.
 ## `graphs.db`
 
 Sage describes this as a database of combinatorial graphs created by Emily
-Kirkman based on the work of Jason Grout.  The upstream contact recorded by
-Sage is:
+Kirkman based on the work of Jason Grout.  The original graph-database project is available at:
 
-- <https://jasongrout.org/graph_database>
+- <https://github.com/jasongrout/graph_database>
 
 ## `isgci_sage.xml` and `smallgraphs.txt`
 
@@ -24,12 +23,12 @@ Inclusions (ISGCI) data.  Sage records the following upstream contact:
 
 Sage records that the underlying data comes from Andries E. Brouwer's website:
 
-- <https://www.win.tue.nl/~aeb/>
+- <https://aeb.win.tue.nl/>
 - data contact: Andries E. Brouwer, `aeb@cwi.nl`
 
-The parser used to create the JSON file is recorded at:
+The parser used to create the JSON file is available at:
 
-- <https://github.com/nathanncohen/strongly_regular_graphs_database>
+- <https://github.com/sagemath/strongly_regular_graphs_database>
 
 ## Release blocker
 

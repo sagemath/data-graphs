@@ -20,7 +20,7 @@ __all__ = [
     "resource_path",
 ]
 
-__version__ = "20210214.0"
+__version__ = "20210214.1"
 
 DATA_FILES = (
     "brouwer_srg_database.json",

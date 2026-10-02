@@ -34,9 +34,9 @@ jobs:
         run: python -m twine check dist/*
       - name: Smoke-test the wheel in a clean environment
         run: |
-          python -m venv /tmp/sage-data-graphs-smoke
-          /tmp/sage-data-graphs-smoke/bin/python -m pip install --no-deps dist/*.whl
-          /tmp/sage-data-graphs-smoke/bin/python - <<'PY'
+          python -m venv /tmp/sagemath-data-graphs-smoke
+          /tmp/sagemath-data-graphs-smoke/bin/python -m pip install --no-deps dist/*.whl
+          /tmp/sagemath-data-graphs-smoke/bin/python - <<'PY'
           from sage_data_graphs import (
               DATA_FILES,
               graph_database_connection,
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/sage-data-graphs
+      url: https://pypi.org/p/sagemath-data-graphs
     permissions:
       id-token: write
     steps:

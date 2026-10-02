@@ -3,8 +3,8 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sage-data-graphs"
-version = "20210214.0"
+name = "sagemath-data-graphs"
+version = "20210214.1"
 description = "Graph database resources for SageMath and other Python applications"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -29,9 +29,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/cxzhong/sage-data-graphs"
-Repository = "https://github.com/cxzhong/sage-data-graphs"
-Issues = "https://github.com/cxzhong/sage-data-graphs/issues"
+Homepage = "https://github.com/sagemath/data-graphs"
+Repository = "https://github.com/sagemath/data-graphs"
+Issues = "https://github.com/sagemath/data-graphs/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
