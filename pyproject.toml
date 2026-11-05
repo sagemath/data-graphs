@@ -3,8 +3,8 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sagemath-data-graphs"
-version = "20210214.1"
+name = "graph-databases"
+version = "20210214.2"
 description = "Graph database resources for SageMath and other Python applications"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -41,7 +41,7 @@ include-package-data = true
 where = ["src"]
 
 [tool.setuptools.package-data]
-"sage_data_graphs.data" = ["*.db", "*.json", "*.xml", "*.txt"]
+"graph_databases.data" = ["*.db", "*.json", "*.xml", "*.txt"]
 
 [tool.pytest.ini_options]
 addopts = "-ra"

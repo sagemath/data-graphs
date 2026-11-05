@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 import pytest
 
-from sage_data_graphs import (
+from graph_databases import (
     DATA_FILES,
     graph_database_connection,
     load_brouwer_database,
