@@ -13,6 +13,8 @@ The distribution contains:
 
 ## Installation
 
+Requires Python 3.13 or newer.
+
 ```console
 python -m pip install graph-databases
 ```
