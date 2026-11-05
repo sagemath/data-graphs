@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
+          python-version: "3.14"
       - name: Check release tag
         run: |
           python - <<'PY'
@@ -34,10 +34,10 @@ jobs:
         run: python -m twine check dist/*
       - name: Smoke-test the wheel in a clean environment
         run: |
-          python -m venv /tmp/sagemath-data-graphs-smoke
-          /tmp/sagemath-data-graphs-smoke/bin/python -m pip install --no-deps dist/*.whl
-          /tmp/sagemath-data-graphs-smoke/bin/python - <<'PY'
-          from sage_data_graphs import (
+          python -m venv /tmp/graph-databases-smoke
+          /tmp/graph-databases-smoke/bin/python -m pip install --no-deps dist/*.whl
+          /tmp/graph-databases-smoke/bin/python - <<'PY'
+          from graph_databases import (
               DATA_FILES,
               graph_database_connection,
               load_brouwer_database,
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/sagemath-data-graphs
+      url: https://pypi.org/p/graph-databases
     permissions:
       id-token: write
     steps:

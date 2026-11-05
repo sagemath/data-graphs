@@ -20,7 +20,7 @@ __all__ = [
     "resource_path",
 ]
 
-__version__ = "20210214.1"
+__version__ = "20210214.2"
 
 DATA_FILES = (
     "brouwer_srg_database.json",
@@ -29,7 +29,7 @@ DATA_FILES = (
     "smallgraphs.txt",
 )
 
-_DATA_PACKAGE = "sage_data_graphs.data"
+_DATA_PACKAGE = "graph_databases.data"
 _TEXT_ENCODINGS = {
     "brouwer_srg_database.json": "utf-8",
     "isgci_sage.xml": "iso-8859-1",

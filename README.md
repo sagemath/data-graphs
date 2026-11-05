@@ -1,6 +1,6 @@
-# sagemath-data-graphs
+# graph-databases
 
-`sagemath-data-graphs` packages the graph database resources historically shipped
+`graph-databases` packages the graph database resources historically shipped
 as SageMath's `graphs` data package.  It has no dependency on Sage and performs
 no network access or writes at import or run time.
 
@@ -13,18 +13,20 @@ The distribution contains:
 
 ## Installation
 
+Requires Python 3.13 or newer.
+
 ```console
-python -m pip install sagemath-data-graphs
+python -m pip install graph-databases
 ```
 
-The Python import name is `sage_data_graphs`.
+The Python import name is `graph_databases`.
 
 ## API
 
 Use the resource API when consuming the raw files:
 
 ```python
-from sage_data_graphs import open_resource, resource, resource_path
+from graph_databases import open_resource, resource, resource_path
 
 with open_resource("smallgraphs.txt", "r") as stream:
     first_line = stream.readline()
@@ -38,7 +40,7 @@ The SQLite helper always opens the bundled database read-only and closes the
 connection after the context exits:
 
 ```python
-from sage_data_graphs import graph_database_connection
+from graph_databases import graph_database_connection
 
 with graph_database_connection() as connection:
     rows = connection.execute("SELECT count(*) FROM graph_data").fetchone()[0]
@@ -47,7 +49,7 @@ with graph_database_connection() as connection:
 The Brouwer JSON data can be decoded with one call:
 
 ```python
-from sage_data_graphs import load_brouwer_database
+from graph_databases import load_brouwer_database
 
 records = load_brouwer_database()
 ```
@@ -62,7 +64,7 @@ Publishing a GitHub Release runs the repository's `Release` GitHub Actions
 workflow.  The workflow builds and checks the wheel and source distribution,
 smoke-tests the wheel in a clean environment, attaches both files to the
 GitHub Release, and publishes them to PyPI through Trusted Publishing.  The
-Release tag must be `20210214.1` or `v20210214.1`.  Configure a PyPI Trusted
+Release tag must be `20210214.2` or `v20210214.2`.  Configure a PyPI Trusted
 Publisher for this repository, the `release.yml` workflow, and the `pypi`
 environment before publishing the first release.  Do not publish a release
 until the data-license blocker below has been resolved.
@@ -77,5 +79,12 @@ the data owners before a public PyPI release.  See [DATA_LICENSES.md](https://gi
 for the provenance currently recorded by Sage.
 
 For the new PyPI project, configure a pending Trusted Publisher with project
-`sagemath-data-graphs`, GitHub owner `sagemath`, repository
+`graph-databases`, GitHub owner `sagemath`, repository
 `data-graphs`, workflow filename `release.yml`, and environment `pypi`.
+
+## Migration from the previous package
+
+This distribution replaces `sagemath-data-graphs`. Install `graph-databases` and change
+imports from `sage_data_graphs` to `graph_databases`. The resource helpers and
+bundled database contents are unchanged. The two distributions use separate
+import namespaces and can coexist while consumers migrate.
